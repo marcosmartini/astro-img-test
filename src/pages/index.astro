@@ -9,11 +9,11 @@ import { Image, Picture } from '@astrojs/image'
 		<div class="container">
 			<div>
 				<h2>Plain image:</h2>
-				<img src={img} width="800px" height="auto">
+				<img src={img} width="800" height="auto" alt="test image">
 			</div>
 			<div>
 				<h2>Astro Image:</h2>
-				<Image src={img} format="avif" width="800px" />
+				<Image src={img} format="avif" width="800" alt="test image" />
 			</div>
 			<div>
 				<h2>Astro Picture:</h2>
