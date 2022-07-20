@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import img from './assets/test-img.jpg'
+import { Image, Picture } from '@astrojs/image'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<div class="container">
+			<div>
+				<h2>Plain image:</h2>
+				<img src={img} width="800px" height="auto">
+			</div>
+			<div>
+				<h2>Astro Image:</h2>
+				<Image src={img} format="avif" width="800px" />
+			</div>
+			<div>
+				<h2>Astro Picture:</h2>
+				<Picture src={img} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="test image"
+					aspectRatio="16:9" />
+			</div>
+
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.container {
+		max-width: 800px;
+		margin-inline: auto;
+		padding: 2rem 1rem 4rem;
+	}
+
+	img {
+		margin-bottom: 4rem;
+	}
+</style>
